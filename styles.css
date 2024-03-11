@@ -1,0 +1,79 @@
+* {
+    --purple-color: rgb(39, 0, 181);
+}
+
+
+body {
+    margin-top: 200px;
+    text-align: center;
+    background-color: #131516;
+}
+.image-preview {
+    width: 400px;
+    height: 400px;
+    min-height: 100px;
+    border: 3px solid rgb(39, 0, 181);
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.image-preview-image {
+    width: 100%;
+    display: none;
+    object-fit: fill;
+}
+.image-preview-default-text {
+    margin-top: 130px;
+    display: solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.image-upload-button {
+    font-size: 1.17em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bold;
+}
+.model-output {
+    margin-bottom: 10px;
+}
+
+#button-and-input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 10px;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    min-height: 150px;
+    background-color: rgb(39, 0, 181);
+    border-radius: 5px;
+}
+
+#nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(39, 0, 181);
+    width: 120em;
+    display: flex;
+}
+
+#web-title {
+    padding-left: .3em;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#input-label {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
