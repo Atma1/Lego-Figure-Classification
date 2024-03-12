@@ -11,7 +11,7 @@ def create_dataloader(data: pd.DataFrame, random_state: int=42) ->Annotated[Data
     batch_tfms = [IntToFloatTensor(), Normalize(mean=mean, std=std)]
     dl = DataBlock(blocks=(ImageBlock, CategoryBlock),
                    splitter=RandomSplitter(seed=random_state),
-                   get_x=ColReader('path', pref=str(dir) + os.path.sep),
+                   get_x=ColReader('path'),
                    get_y=ColReader('class_label'),
                    item_tfms=[Resize(256), CenterCrop(256)],
                    batch_tfms=batch_tfms)
