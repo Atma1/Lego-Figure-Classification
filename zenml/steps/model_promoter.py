@@ -18,6 +18,7 @@ def model_promoter(accuracy: float, stage: str = "production"):
         current_model = get_step_context().model
 
         client = Client()
+        
         try:
             stage_model = client.get_model_version(
                 current_model.name, stage
