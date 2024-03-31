@@ -1,6 +1,6 @@
 from zenml import pipeline, log_artifact_metadata
 from pipelines import data_engineering
-from steps import train
+from steps import train, model_promoter
 
 
 @pipeline
@@ -16,3 +16,5 @@ def training_model(lr: float):
         metadata={"accuracy": float(accuracy)},
         artifact_name="resnet18",
     )
+
+    model_promoter(accuracy=accuracy)
