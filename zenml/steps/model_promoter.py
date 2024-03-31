@@ -23,7 +23,7 @@ def model_promoter(accuracy: float, stage: str = "production"):
                 current_model.name, stage
             )
             prod_accuracy = (
-                stage_model.get_artifact("Resnet18")
+                stage_model.get_artifact("resnet18")
                 .run_metadata["accuracy"]
                 .value
             )
