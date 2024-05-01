@@ -6,7 +6,7 @@ logger = get_logger(__name__)
 
 
 @step
-def model_promoter(accuracy: float, stage: str = "production"):
+def model_promoter(accuracy: float, stage: str = "production") -> None:
 
     if accuracy < 0.8:
         logger.info(
