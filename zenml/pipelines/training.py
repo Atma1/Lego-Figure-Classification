@@ -4,7 +4,7 @@ from steps import train, model_promoter
 
 
 @pipeline
-def training_model(lr: float):
+def training(lr: float):
 
     dataloaders = data_engineering()
     trained_model = train(dls=dataloaders, lr=lr)
