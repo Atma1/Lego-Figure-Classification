@@ -13,6 +13,6 @@ def data_engineering():
     Data engineering
     """
 
-    transformed_data = data_transform.data_transform("dataset")
-    dls = data_loader.create_dataloader(transformed_data)
+    transformed_data = data_transform("dataset")
+    dls = data_loader(transformed_data)
     return dls
