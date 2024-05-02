@@ -6,7 +6,7 @@ from zenml.logger import get_logger
 logger = get_logger(__name__)
 
 @step
-def train_model(dls: DataLoaders, lr: float=1e-2
+def train(dls: DataLoaders, lr: float=1e-2
                 ) -> Annotated[Learner, ArtifactConfig(name="resnet18", is_model_artifact=True)]:
     model = vision_learner(dls, resnet18, metrics=accuracy, lr=lr)
     logger.info("Training model.....")
