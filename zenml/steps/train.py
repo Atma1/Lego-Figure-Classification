@@ -13,5 +13,5 @@ def train(dls: DataLoaders, lr: float=1e-2
     """
     model = vision_learner(dls, resnet18, metrics=accuracy, lr=lr)
     logger.info("Training model.....")
-    model.fine_tune(1);
+    model.fine_tune(5);
     return model
