@@ -13,6 +13,9 @@ ROOT_DIR = os.path.dirname(
 
 @step
 def data_transform(df_dir: str) -> Annotated[pd.DataFrame, "transformed_data"]:
+    """
+    Data transform step
+    """
     metadata_csv_dir = os.path.join(ROOT_DIR , f"{df_dir}/metadata.csv")
     index_csv_dir = os.path.join(ROOT_DIR, f"{df_dir}/index.csv")
     index_label_series = pd.read_csv(metadata_csv_dir)["minifigure_name"]
