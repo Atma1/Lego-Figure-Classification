@@ -4,15 +4,16 @@ from steps import (
     data_loader, 
     data_transform
 )
+from typing_extensions import Annotated
+import pandas as pd
 
 logger = get_logger(__name__)
 
 @pipeline
-def data_engineering():
+def data_engineering() ->Annotated[pd.DataFrame, "transformed_data"]:
     """
     Data engineering
     """
 
     transformed_data = data_transform("dataset")
-    dls = data_loader(transformed_data)
-    return dls
+    return transformed_data
