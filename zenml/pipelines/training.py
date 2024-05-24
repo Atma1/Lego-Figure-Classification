@@ -1,20 +1,12 @@
-from zenml import pipeline, log_artifact_metadata
+from zenml import pipeline
 from pipelines import data_engineering
 from steps import train, model_promoter
 
 
-@pipeline
+@pipeline(enable_cache=False)
 def training(lr: float):
 
-    dataloaders = data_engineering()
-    trained_model = train(dls=dataloaders, lr=lr)
-    
-    metrics = trained_model.recorder.metrics
-    accuracy = metrics[0].value.item()
+    transformed_data = data_engineering()
+    trained_model = train(transformed_data=transformed_data, lr=lr)
 
-    log_artifact_metadata(
-        metadata={"accuracy": float(accuracy)},
-        artifact_name="resnet18",
-    )
-
-    model_promoter(accuracy=accuracy)
+    model_promoter(trained_model=trained_model)
