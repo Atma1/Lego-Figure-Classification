@@ -1,9 +1,16 @@
-from zenml import pipeline
+from zenml import pipeline, Model
 from pipelines import data_engineering
 from steps import train, model_promoter
 
 
-@pipeline(enable_cache=False)
+model = Model(
+    name="Resnet18",
+    license="MIT",
+    description="Resnet18 feature extraction model for classification of lego figure.",
+    version="stagin"
+)
+
+@pipeline(enable_cache=True, model=model)
 def training(lr: float):
 
     transformed_data = data_engineering()
