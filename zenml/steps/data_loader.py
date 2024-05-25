@@ -14,7 +14,7 @@ def data_loader(data: pd.DataFrame, random_state: int=42, valid_pct: float=0.2
     batch_tfms = [Normalize.from_stats(mean=mean, std=std)]
     dl = DataBlock(blocks=(ImageBlock, CategoryBlock),
                    splitter=RandomSplitter(seed=random_state, valid_pct=valid_pct),
-                   get_x=ColReader('path'),
+                   get_x=ColReader('img_path'),
                    get_y=ColReader('class_label'),
                    item_tfms=[CropPad(256), Resize(256)],
                    batch_tfms=batch_tfms)
