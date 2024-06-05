@@ -1,0 +1,103 @@
+* {
+    font-family: sans-serif;
+    --purple-color: rgb(39, 0, 181);
+}
+
+
+body {
+    margin-top: 110px;
+    text-align: center;
+    background-color: whitesmoke;
+}
+.image-preview {
+    width: 400px;
+    height: 400px;
+    min-height: 100px;
+    border: 3px solid var(--purple-color);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 1em;
+    border-radius: 10px;
+}
+.image-preview-image {
+    width: 100%;
+    object-fit: scale-down;
+}
+.image-preview-default-text {
+    text-align: center;
+    margin-top: 11em;
+    display: solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.image-upload-button {
+    font-size: 1.17em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 96%;
+    height: 40px;
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bold;
+}
+.model-output {
+    margin-bottom: 10px;
+}
+
+.model-output-title {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 auto;
+    width: 400px;
+    padding: .5em;
+    border-radius: 10px;
+}
+
+.model-output-title h3 {
+    border-bottom: 1px solid black;
+}
+
+#button-and-input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 2em;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 400px;
+    min-height: 150px;
+    background-color: var(--purple-color);
+    border-radius: 20px;
+    padding: .9em 0 .9em 1em;
+}
+
+#nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--purple-color);
+    width: 120em;
+    display: flex;
+}
+
+#web-title {
+    padding-left: 2em;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#input-label {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#image-input {
+    border-radius: 5px;
+    border-style: none;
+    font-weight: bold;
+    color: white;
+}
