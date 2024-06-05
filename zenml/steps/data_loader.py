@@ -18,5 +18,5 @@ def data_loader(data: pd.DataFrame, random_state: int=42, valid_pct: float=0.2
                    get_y=ColReader('class_label'),
                    item_tfms=[CropPad(256), Resize(256)],
                    batch_tfms=batch_tfms)
-    dls = dl.dataloaders(data)
+    dls = dl.dataloaders(data, verbose=False)
     return dls
