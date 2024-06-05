@@ -1,6 +1,6 @@
 from zenml import pipeline, Model
 from pipelines import data_engineering
-from steps import train, model_promoter
+from steps import train, model_promoter, serve_model
 
 
 model = Model(
@@ -10,10 +10,10 @@ model = Model(
     version="stagin"
 )
 
-@pipeline(enable_cache=True, model=model)
+@pipeline(enable_cache=False, model=model)
 def training(lr: float):
 
     transformed_data = data_engineering()
-    trained_model = train(transformed_data=transformed_data, lr=lr)
-
+    trained_model, run_id = train(transformed_data=transformed_data, lr=lr)
     model_promoter(trained_model=trained_model)
+    serve_model(run_id=run_id)
