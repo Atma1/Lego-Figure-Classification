@@ -6,3 +6,7 @@ from .train import train
 
 from .model_promoter import model_promoter
 
+from .get_model_uri import get_model_uri
+
+from .serve_model import serve_model
+
