@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     font-family: sans-serif;
     --purple-color: rgb(39, 0, 181);
@@ -39,6 +43,7 @@ body {
     border-radius: 5px;
     border-style: none;
     font-weight: bold;
+    cursor: pointer;
 }
 .model-output {
     margin-bottom: 10px;
@@ -100,4 +105,5 @@ body {
     border-style: none;
     font-weight: bold;
     color: white;
+    cursor: pointer;
 }
