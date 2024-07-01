@@ -12,7 +12,7 @@ export default function Body({file, handleFileInputChange, handleUploadClick, pr
         <div id="button-and-input-container">
             <label for="imagePreview" id="input-label">Choose Image To Classifiy</label>
             <input type="file" name="imagePreview" id="image-input" accept=".jpg, .jpeg" onChange={handleFileInputChange}/>
-            <button type="submit" class="image-upload-button" id="imageUploadButton" onClick={() => handleUploadClick(file)}>Get Prediction</button>
+            <button type="submit" class="image-upload-button bg-white hover:bg-gray-200" id="imageUploadButton" onClick={() => handleUploadClick(file)}>Get Prediction</button>
         </div>
     </>
     );
